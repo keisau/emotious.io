@@ -2,7 +2,7 @@ var webpack = require ("webpack")
 var path = require ("path")
 
 var jsPath = path.resolve (__dirname, "client", "js")
-var buildPath = path.resolve (__dirname, "client" "build")
+var buildPath = path.resolve (__dirname, "client", "build")
 
 module.exports = {
 	entry: [
