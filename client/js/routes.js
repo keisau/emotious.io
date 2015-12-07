@@ -7,16 +7,16 @@ import { ReduxRouter, pushState } from "redux-router"
 import IndexContainer, { NotFoundContainer, RootContainer } from "./containers"
 import history from "./history"
 
-import * as rootActions from "./actions/rootActions"
-
-import { store } from "./store"
+import { setLoaded } from "./actions/rootActions"
 
 const App = React.createClass ({
 	initialize (nextState, replaceState) {
+		this.props.setLoaded (false)
 	},
 	render () {
+		console.log (this)
 		return (
-			<ReduxRouter history={history} createElement={this.createElement} >
+			<ReduxRouter history={history} >
 				<Route path="/" component={RootContainer} onEnter={this.initialize}>
 					<IndexRoute component={IndexContainer} />
 					<Route path="*" component={NotFoundContainer} />
@@ -30,6 +30,6 @@ export default connect (
 	state => ({}),
 	dispatch => ({
 		pushState,
-		actions: bindActionCreators (rootActions, dispatch)
+		setLoaded: bindActionCreators (setLoaded, dispatch)
 	})
 ) (App)

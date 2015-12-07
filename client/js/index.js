@@ -1,5 +1,7 @@
 require ("babel-polyfill")
 
+import React from "react"
+
 window.onunload = () => {}
 window.onpageshow = event => {
 	if (event.persisted) {

@@ -1,0 +1,42 @@
+/**
+ * dependencies
+ */
+@import "~normalize.css/normalize.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/**
+ * our styles
+ */
+ // Mixin
+%clearfix {
+	&:before,
+	&:after {
+		content: ""! important;
+		display: table! important;
+		clear: both! important;
+	}
+}
+
+/**
+ * show/hide overrides
+ */
+.hide {
+	display: none!important;
+}
+.show-block {
+	display: block!important;
+}
+.show-table {
+	display: table!important;
+}
+
+/**
+ * included styles
+ */
+#mainSection {
+	@import "./root.scss";
+}
+
+@-ms-viewport{
+  width: device-width;
+}

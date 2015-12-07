@@ -32,7 +32,7 @@ module.exports = {
 		]
 	},
 	devServer: {
-		contentBase: publicPath,
+		contentBase: buildPath,
 		stats: {
 			colors: true
 		},
