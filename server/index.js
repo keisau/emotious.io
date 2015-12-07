@@ -1,5 +1,6 @@
 import express from "express"
 import http from "http"
+import httpStatus from "http-status"
 import bodyParser from "body-parser"
 
 import path from "path"
@@ -29,7 +30,7 @@ app.get ("*[/\*]*", function (req, res, next) {
 	//log.info ("path [others]: %s", req.path)
 	fs.readFile (path.resolve (clientPath, "build", "index.html"), function (err, data) {
 		if (err) {
-			res.status (404).send ("Not found")
+			res.status (404).send (httpStatus[404])
 		} else {
 			res.set ("Content-Type", "text/html")
 			res.status (200).send (data)

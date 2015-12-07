@@ -3,6 +3,7 @@ var path = require ("path")
 
 var jsPath = path.resolve (__dirname, "client", "js")
 var buildPath = path.resolve (__dirname, "client", "build")
+var publicPath = path.resolve (__dirname, "client", "public")
 
 module.exports = {
 	entry: [
@@ -31,7 +32,7 @@ module.exports = {
 		]
 	},
 	devServer: {
-		contentBase: buildPath,
+		contentBase: publicPath,
 		stats: {
 			colors: true
 		},
