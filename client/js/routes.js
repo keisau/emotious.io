@@ -11,7 +11,7 @@ import { setLoaded } from "./actions/rootActions"
 
 const App = React.createClass ({
 	initialize (nextState, replaceState) {
-		this.props.setLoaded (false)
+		this.props.setLoaded (true)
 	},
 	render () {
 		console.log (this)

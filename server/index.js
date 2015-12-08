@@ -6,6 +6,8 @@ import bodyParser from "body-parser"
 import path from "path"
 import fs from "fs"
 
+import logger from "./logger"
+
 const app = express ()
 
 app.set ("port", process.env.PORT || 80)
@@ -50,5 +52,5 @@ app.use (function (req, res, next) {
  * Start of server
  */
 const server = http.createServer (app).listen (app.get ("port"), function () {
-	console.log ("[http] server started listening to port %d", app.get ("port"))
+	logger.info ("[http] server started listening to port %d", app.get ("port"))
 })
